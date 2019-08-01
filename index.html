@@ -175,7 +175,7 @@
         <p>​        Welcome to <a href="https://songsshao.github.io/" target="_blank" rel="noopener">SongShao Notes</a>.Today I will tell you how to use Hexo and github to create your own static blog.</p>
 <p>​        First we need to install several software, <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">npm</a> and <a href="https://github.com/git-for-windows/git/releases/tag/v2.15.0.windows.1" target="_blank" rel="noopener">git</a>, npm is responsible for downloading the local resource files we need, git is responsible for connecting the github project branch to upload and download files.The node.js here already contains npm so there is no need to install it.</p>
 <h2 id="Create-Github-Branch-And-Local-Git-Configuration"><a href="#Create-Github-Branch-And-Local-Git-Configuration" class="headerlink" title="Create Github Branch And Local Git Configuration"></a>Create Github Branch And Local Git Configuration</h2><h3 id="Create-A-Github-Repository"><a href="#Create-A-Github-Repository" class="headerlink" title="Create A Github  Repository"></a>Create A Github  Repository</h3><p>​        Here we need to create our static blog repository, naming rules, prefixed with the suggested github name, plus github.io, as shown in my repository name below.</p>
-<p><img src="/images/111.png" alt="111"></p>
+<p><img src="/img/111.png" alt="111"></p>
 <h3 id="Configuring-SSH-key"><a href="#Configuring-SSH-key" class="headerlink" title="Configuring SSH key"></a>Configuring SSH key</h3><p>​    Why should I configure this? Because you must have your github permission to submit the code, but it is too insecure to use the username and password directly, so we use ssh key to solve the connection problem between the local and the server.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/. ssh  //Check the existing ssh key of this machine</span><br></pre></td></tr></table></figure>
 
@@ -183,7 +183,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></span><br></pre></td></tr></table></figure>
 
 <p>​    Then enter 3 times in succession, and finally generate a file in the user directory, open the user directory, find  .ssh\id_rsa.pub   file,Notepad opens and copies the contents, open your github home page, enter personal settings-&gt; SSH and GPG keys -&gt; New SSH key：</p>
-<p><img src="/images/112.png" alt></p>
+<p><img src="/img/112.png" alt></p>
 <p>​    Fill in the key just copied in the location of the key.</p>
 <h4 id="Test-Connection"><a href="#Test-Connection" class="headerlink" title="Test Connection"></a>Test Connection</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
@@ -201,13 +201,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /f/Workspaces/hexo/</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
 
 <p>​        Hexo will automatically download some files to this directory, including node_modules, the directory structure is as follows:</p>
-<p><img src="/images/113.png" alt></p>
+<p><img src="/img/113.png" alt></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="comment"># generate</span></span><br><span class="line">$ hexo s <span class="comment"># start service</span></span><br></pre></td></tr></table></figure>
 
 <p>​        After executing the above command, hexo will generate the relevant html files in the public folder. These files will be submitted to github in the future:</p>
-<p><img src="/images/114.png" alt></p>
+<p><img src="/img/114.png" alt></p>
 <p>​    ‘hexo s’ After starting the service, you can see the content by opening a browser and accessing <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>:</p>
-<p><img src="/images/115.png" alt></p>
+<p><img src="/img/115.png" alt></p>
 
       
 
