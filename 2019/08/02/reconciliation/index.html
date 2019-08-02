@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://songsshao.github.io">
-  <title>Note&#39;s</title>
+  <title>协调（Reconciliation） | Note&#39;s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Note&#39;s">
-<meta property="og:url" content="https://songsshao.github.io/index.html">
+  <meta name="description" content="React提供了一组声明式API以让你不必担心每次更新精确地改变了什么。这使得应用的编写容易了很多，但这是在React中如何实现并不是很明显。这篇文章解释了在React中的“差分(diffing)”算法中我们所做出的选择，以让组件更新是可预测的，并且足够快以适应高性能应用。">
+<meta name="keywords" content="React">
+<meta property="og:type" content="article">
+<meta property="og:title" content="协调（Reconciliation）">
+<meta property="og:url" content="https://songsshao.github.io/2019/08/02/reconciliation/index.html">
 <meta property="og:site_name" content="Note&#39;s">
+<meta property="og:description" content="React提供了一组声明式API以让你不必担心每次更新精确地改变了什么。这使得应用的编写容易了很多，但这是在React中如何实现并不是很明显。这篇文章解释了在React中的“差分(diffing)”算法中我们所做出的选择，以让组件更新是可预测的，并且足够快以适应高性能应用。">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-02T02:54:01.657Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Note&#39;s">
+<meta name="twitter:title" content="协调（Reconciliation）">
+<meta name="twitter:description" content="React提供了一组声明式API以让你不必担心每次更新精确地改变了什么。这使得应用的编写容易了很多，但这是在React中如何实现并不是很明显。这篇文章解释了在React中的“差分(diffing)”算法中我们所做出的选择，以让组件更新是可预测的，并且足够快以适应高性能应用。">
   
     <link rel="alternative" href="/atom.xml" title="Note&#39;s" type="application/atom+xml">
   
@@ -150,95 +155,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Portals" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-reconciliation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/Portals/">Portals</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/02/Portals/" class="archive-article-date">
-  	<time datetime="2019-08-02T06:44:55.785Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.createPortal(child, container)</span><br></pre></td></tr></table></figure>
-
-<p>第一个参数（<code>child</code>）是任何<a href="/docs/react-component.html#render">可渲染的 React 子元素</a>，例如一个元素，字符串或碎片。第二个参数（<code>container</code>）则是一个 DOM 元素。</p>
-        
-          <a class="article-more-a" href="/2019/08/02/Portals/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/Portals/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-reconciliation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/02/reconciliation/">协调（Reconciliation）</a>
+    <h1 class="article-title" itemprop="name">
+      协调（Reconciliation）
     </h1>
   
 
@@ -252,11 +176,89 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>React提供了一组声明式API以让你不必担心每次更新精确地改变了什么。这使得应用的编写容易了很多，但这是在React中如何实现并不是很明显。这篇文章解释了在React中的“差分(diffing)”算法中我们所做出的选择，以让组件更新是可预测的，并且足够快以适应高性能应用。</p>
-        
-          <a class="article-more-a" href="/2019/08/02/reconciliation/#more">more >></a>
-        
+<a id="more"></a>
+<blockquote>
+<p>译者注：<strong>diffing</strong>算法用来找出两棵树的所有不同点，类似于游戏“找别扭”。</p>
+</blockquote>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>当你使用React，在某一个时间点，你可以认为<code>render()</code>函数是在创建React元素树。在下一状态或属性更新时，<code>render()</code>函数将返回一个不同的React元素树。React需要算出如何高效更新UI以匹配最新的树。</p>
+<p>有一些通用的解决方案，对于生成最小操作数的这个算法问题，以将一棵树转换为另一棵树。然而，在<a href="http://grfia.dlsi.ua.es/ml/algorithms/references/editsurvey_bille.pdf" target="_blank" rel="noopener">state of the art algorithms</a> 中有时间复杂度为O(n<sup>3</sup>)，在这里n代表树中元素个数。</p>
+<p>若我们在React中使用，展示1000个元素则需要进行10亿次的比较。这太过昂贵。与此不同，React基于两点假设，实现了一个启发的O(n)算法：</p>
+<ol>
+<li>两个不同类型的元素将产生不同的树。</li>
+<li>开发者可以使用<code>key</code>属性来提示哪些子元素贯穿不同渲染是稳定的。</li>
+</ol>
+<p>实践中，上述这些假设适用于大部分应用场景。</p>
+<h2 id="差分算法"><a href="#差分算法" class="headerlink" title="差分算法"></a>差分算法</h2><p>当差分两棵树时，React首先比较两个根元素。根据根元素的类型的不同，其行为会有所不同。</p>
+<h3 id="不同类型的元素"><a href="#不同类型的元素" class="headerlink" title="不同类型的元素"></a>不同类型的元素</h3><p>每当根元素有不同类型，React将拆除旧树并且从零开始重新构建新树。从<code>&lt;a&gt;</code>到<code>&lt;img&gt;</code>或从<code>&lt;Article&gt;</code>到<code>&lt;Comment&gt;</code>，或从<code>&lt;Button&gt;</code> 到 <code>&lt;div&gt;</code>————这些都会导致充分地重新构建。</p>
+<p>当拆除一棵树时，旧的DOM节点被销毁。组件实例收到<code>componentWillUnmount()</code>。当构建一棵新树时，新的DOM节点被插入到DOM中。组件实例先收到<code>componentWillMount()</code>，然后收到<code>componentDidMount()</code>。任何与旧树有关的状态都被丢弃。</p>
+<p>这个根下任何组件也都将被卸载，他们的状态被销毁。例如，当定义：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Counter</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">Counter</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这将销毁旧的<code>Counter</code>并重装载一个新的。</p>
+<h3 id="相同类型的DOM元素"><a href="#相同类型的DOM元素" class="headerlink" title="相同类型的DOM元素"></a>相同类型的DOM元素</h3><p>当比较两个相同类型的React DOM元素时，React则会观察二者的属性(attributes)，保持相同的底层DOM节点，并仅更新变化的属性。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"before"</span> <span class="attr">title</span>=<span class="string">"stuff"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"after"</span> <span class="attr">title</span>=<span class="string">"stuff"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过比较这两个元素，React知道仅更改底层DOM元素的<code>className</code>。</p>
+<p>当更新<code>style</code>时，React同样知道仅更新改变的属性(properties)。例如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span> '<span class="attr">red</span>', <span class="attr">fontWeight:</span> '<span class="attr">bold</span>'&#125;&#125; /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span> '<span class="attr">green</span>', <span class="attr">fontWeight:</span> '<span class="attr">bold</span>'&#125;&#125; /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当在两个元素之间转化时，React知道仅修改<code>color</code>样式，而<code>fontWeight</code>不用修改。</p>
+<p>在处理完DOM元素后，React递归其子代。</p>
+<h3 id="相同类型的组件元素"><a href="#相同类型的组件元素" class="headerlink" title="相同类型的组件元素"></a>相同类型的组件元素</h3><p>当组件更新时，实例保持相同，这样状态跨渲染被维护。React通过更新底层组件实例的属性(props)来匹配新元素，并在底层实例上调用<code>componentWillReceiveProps()</code> 和 <code>componentWillUpdate()</code>。</p>
+<p>下一步，<code>render()</code>方法被调用，差分算法递归处理前一次的结果和新的结果。</p>
+<h3 id="子代们上的递归"><a href="#子代们上的递归" class="headerlink" title="子代们上的递归"></a>子代们上的递归</h3><p>默认时，当递归DOM节点的子节点时，React就是迭代在同一时间点的两个子节点列表，并在不同时产生一个变更。</p>
+<p>例如，当在子节点末尾增加一个元素，两棵树的转换效果很好：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>first<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>second<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>first<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>second<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>third<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>React将会匹配两棵树的<code>&lt;li&gt;first&lt;/li&gt;</code>，并匹配两棵树的<code>&lt;li&gt;second&lt;/li&gt;</code> 节点，并插入<code>&lt;li&gt;third&lt;/li&gt;</code>节点树。</p>
+<p>如果你的实现方法过于天真，插入元素到列表的开头会使得性能变坏。例如，这两棵树之间转换效果不佳：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Connecticut<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>React将修改每个子节点，而非意识到可以完整保留<code>&lt;li&gt;Duke&lt;/li&gt;</code> 和 <code>&lt;li&gt;Villanova&lt;/li&gt;</code>子树。低效成了一个问题。</p>
+<h3 id="Keys"><a href="#Keys" class="headerlink" title="Keys"></a>Keys</h3><p>为解决该问题，React支持了一个<code>key</code>属性。当子节点有key时，React使用key来匹配原始树的子节点和随后树的子节点。例如，增加一个<code>key</code>到上面低效的示例，能让树的转换变得高效：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">"2015"</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">"2016"</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">"2014"</span>&gt;</span>Connecticut<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">"2015"</span>&gt;</span>Duke<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">key</span>=<span class="string">"2016"</span>&gt;</span>Villanova<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在React知道带有<code>&#39;2014&#39;</code>的key的元素是新的，带有<code>&#39;2015&#39;</code>和<code>&#39;2016&#39;</code>的key的元素仅需要移动。</p>
+<p>实践中，找到一个key通常不难。你将显示的元素可能已经带有一个唯一的ID，因此key可以来自于你的数据中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;li key=&#123;item.id&#125;&gt;&#123;item.name&#125;&lt;<span class="regexp">/li&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当不是这种情况时，你可以增加一个新的ID属性给模型，或根据内容的一些部分创建一个哈希值来作为key。key必须是唯一的，只在其兄弟中，不用全局唯一。</p>
+<p>作为最后的手段，你可以传递项目在数组中的索引作为key。若元素顺序永远不会改变，该方法效果不错，但重新排序就会很慢。</p>
+<p>当索引用作key时，重新排序时也会引起组件状态方面的问题。组件实例进行更新和重用都是基于他们的key。如果key是索引，则移动一个项目改变索引，结果，诸如非受控输入这类的组件状态可能会以意想不到的方式混淆和更新。</p>
+<p><a href="https://reactjs.org/redirect-to-codepen/reconciliation/index-used-as-key" target="_blank" rel="noopener">这里</a>是在CodePen上使用索引作为键可能导致的问题的一个例子，<a href="https://reactjs.org/redirect-to-codepen/reconciliation/no-index-used-as-key" target="_blank" rel="noopener">这里</a>是同一个例子的更新版本，展示了如何不使用索引作为键将解决这些reordering, sorting, 和 prepending的问题。</p>
+<h2 id="权衡"><a href="#权衡" class="headerlink" title="权衡"></a>权衡</h2><p>重点要记住协调算法是一个实现细节。React可以在每次操作时重新渲染整个应用；最终结果仍是相同的。清晰起见，在此上下文中的重新渲染意味着对于所有组件调用<code>render</code>。不意味着React将卸载并重新装载他们。将只是应用不同的部分，按照前几节的规则得出的不同。</p>
+<p>我们依照规律提炼启发式的算法，为了使大多数场景能更快。在目前实现中，可以表达事实是，一个子树在其兄弟节点中间已经被移动，但你不能告知其已经移动到别的某处。该算法会重新渲染整个子树。</p>
+<p>由于React依赖于该启发式算法，若其背后的假设没得到满足，性能将遭殃：</p>
+<ol>
+<li><p>算法无法尝试匹配不同组件类型的子树。如果看见两个输出非常相似的组件类型交替出现，你可能需要使其成为相同类型。实践中，我们没有发现这成为问题。</p>
+</li>
+<li><p>Keys应该是稳定的，可预测的，且唯一的。不稳定的key（类似由<code>Math.random()</code>生成的）将引起许多组件实例和DOM节点不必要的重建，这可能引起性能下降并丢失子组件的状态。</p>
+</li>
+</ol>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -276,16 +278,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/02/reconciliation/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://songsshao.github.io/2019/08/02/reconciliation/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/02/Portals/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Portals
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/01/HexoAndGithub/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo and github.io</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -305,165 +375,14 @@
 
 
 
-
   
-    <article id="post-HexoAndGithub" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/01/HexoAndGithub/">Hexo and github.io</a>
-    </h1>
   
 
-        
-        <a href="/2019/08/01/HexoAndGithub/" class="archive-article-date">
-  	<time datetime="2019-08-01T04:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​        Welcome to <a href="https://songsshao.github.io/">SongShao Notes</a>.Today I will tell you how to use Hexo and github to create your own static blog.</p>
-<p>​        First we need to install several software, <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">npm</a> and <a href="https://github.com/git-for-windows/git/releases/tag/v2.15.0.windows.1" target="_blank" rel="noopener">git</a>, npm is responsible for downloading the local resource files we need, git is responsible for connecting the github project branch to upload and download files.The node.js here already contains npm so there is no need to install it.</p>
-        
-          <a class="article-more-a" href="/2019/08/01/HexoAndGithub/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/01/HexoAndGithub/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/hello-world/">Hello World</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/31/hello-world/" class="archive-article-date">
-  	<time datetime="2019-07-31T09:04:19.212Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        
-          <a class="article-more-a" href="/2019/07/31/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/31/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -486,8 +405,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
