@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。
+">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Note&#39;s">
+        <meta property="og:title" content="React component development">
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Note&#39;s</title>
+    <title>React component development - Note&#39;s</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -135,17 +138,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Note's</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2020/05/13/ReactComponents/">
                 React component development
@@ -160,9 +160,13 @@
         </div>
     </div>
 
-    
-        <div class="content">
-            <h2 id="组件的使用、开发、发布和规范"><a href="#组件的使用、开发、发布和规范" class="headerlink" title="组件的使用、开发、发布和规范"></a>组件的使用、开发、发布和规范</h2><p><strong>Component</strong>，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。<br><strong>Module</strong>, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。</p>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="组件的使用、开发、发布和规范"><a href="#组件的使用、开发、发布和规范" class="headerlink" title="组件的使用、开发、发布和规范"></a>组件的使用、开发、发布和规范</h2><p><strong>Component</strong>，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。<br><strong>Module</strong>, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。</p>
 <blockquote>
 <p>组件(Component)和模块(Module)又是一对容易混淆的名词，也常常被用来相互替换。个人总结，<strong>从设计上来看，组件强调复用，模块强调职责(内聚、分离)，</strong>或者说组件是达到可复用要求的模块。</p>
 </blockquote>
@@ -327,300 +331,25 @@
 <li>代码示例</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 判断一个函数的第一个必填，且为 String 格式</span><br><span class="line">// ES6 语法</span><br><span class="line">changeTitle(title) &#123;</span><br><span class="line">  if (typeof title !== &apos;string&apos;) &#123;</span><br><span class="line">    throw new Error(&apos;必须传入一个 title，才能修改 title。&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  // 满足条件，可以进行修改</span><br><span class="line">  this.setState(&#123;      // react 语法，修改state的值</span><br><span class="line">    title</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/08/refs-dom/">
-                Refs & DOM
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-08</span>
-            
-            
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <p>Refs 提供了一种方式，用于访问在 render 方法中创建的 DOM 节点或 React 元素。</p>
-<p>在典型的 React 数据流中, <a href="/docs/components-and-props.html">属性（props）</a>是父组件与子组件交互的唯一方式。要修改子组件，你需要使用新的 props 重新渲染它。但是，某些情况下你需要在典型数据流外强制修改子组件。要修改的子组件可以是 React 组件的实例，也可以是 DOM 元素。对于这两种情况，React 提供了解决办法。</p>
-<h3 id="何时使用-Refs"><a href="#何时使用-Refs" class="headerlink" title="何时使用 Refs"></a>何时使用 Refs</h3><p>下面是几个适合使用 refs 的情况：</p>
-<ul>
-<li>处理焦点、文本选择或媒体控制。</li>
-<li>触发强制动画。</li>
-<li>集成第三方 DOM 库</li>
-</ul>
-<p>如果可以通过声明式实现，则尽量避免使用 refs。</p>
-<p>例如，不要在 <code>Dialog</code> 组件上直接暴露 <code>open()</code> 和 <code>close()</code> 方法，最好传递 <code>isOpen</code> 属性。</p>
-<h3 id="不要过度使用-Refs"><a href="#不要过度使用-Refs" class="headerlink" title="不要过度使用 Refs"></a>不要过度使用 Refs</h3><p>你可能首先会想到在你的应用程序中使用 refs 来更新组件。如果是这种情况，请花一点时间，重新思考一下 state 属性在组件层中位置。通常你会想明白，提升 state 所在的组件层级会是更合适的做法。有关示例，请参考<a href="/docs/lifting-state-up.html">状态提升</a>.</p>
-<blockquote>
-<p>Note</p>
-<p>下面的例子已经用 React v16.3 引入的 <code>React.createRef()</code> API 更新。如果你正在使用 React 更早的发布版，我们推荐使用<a href="#callback-refs">回调形式的 refs</a>。</p>
-</blockquote>
-<h3 id="创建-Refs"><a href="#创建-Refs" class="headerlink" title="创建 Refs"></a>创建 Refs</h3><p>使用 <code>React.createRef()</code> 创建 refs，通过 <code>ref</code> 属性来获得 React 元素。当构造组件时，refs 通常被赋值给实例的一个属性，这样你可以在组件中任意一处使用它们.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.myRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ref</span>=<span class="string">&#123;this.myRef&#125;</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="访问-Refs"><a href="#访问-Refs" class="headerlink" title="访问 Refs"></a>访问 Refs</h3><p>当一个 ref 属性被传递给一个 <code>render</code> 函数中的元素时，可以使用 ref 中的 <code>current</code> 属性对节点的引用进行访问。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> node = <span class="keyword">this</span>.myRef.current;</span><br></pre></td></tr></table></figure>
-
-<p>ref的值取决于节点的类型:</p>
-<ul>
-<li>当 <code>ref</code> 属性被用于一个普通的 HTML 元素时，<code>React.createRef()</code> 将接收底层 DOM 元素作为它的 <code>current</code> 属性以创建 <code>ref</code> 。</li>
-<li>当 <code>ref</code> 属性被用于一个自定义类组件时，<code>ref</code> 对象将接收该组件已挂载的实例作为它的 <code>current</code> 。</li>
-<li><strong>你不能在函数式组件上使用 <code>ref</code> 属性</strong>，因为它们没有实例。</li>
-</ul>
-<p>下面的例子说明了这些差异。</p>
-<h4 id="为-DOM-元素添加-Ref"><a href="#为-DOM-元素添加-Ref" class="headerlink" title="为 DOM 元素添加 Ref"></a>为 DOM 元素添加 Ref</h4><p>以下代码使用 <code>ref</code> 存储对 DOM 节点的引用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="comment">// 创建 ref 存储 textInput DOM 元素</span></span><br><span class="line">    <span class="keyword">this</span>.textInput = React.createRef();</span><br><span class="line">    <span class="keyword">this</span>.focusTextInput = <span class="keyword">this</span>.focusTextInput.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  focusTextInput() &#123;</span><br><span class="line">    <span class="comment">// 直接使用原生 API 使 text 输入框获得焦点</span></span><br><span class="line">    <span class="comment">// 注意：通过 "current" 取得 DOM 节点</span></span><br><span class="line">    <span class="keyword">this</span>.textInput.current.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// 告诉 React 我们想把 &lt;input&gt; ref 关联到构造器里创建的 `textInput` 上</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"text"</span></span><br><span class="line">          ref=&#123;<span class="keyword">this</span>.textInput&#125; /&gt;</span><br><span class="line">          </span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"button"</span></span><br><span class="line">          value=<span class="string">"Focus the text input"</span></span><br><span class="line">          onClick=&#123;<span class="keyword">this</span>.focusTextInput&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>React 会在组件加载时将 DOM 元素传入 <code>current</code> 属性，在卸载时则会改回 <code>null</code>。<code>ref</code> 的更新会发生在<code>componentDidMount</code> 或 <code>componentDidUpdate</code> 生命周期钩子之前。</p>
-<h4 id="为类组件添加-Ref"><a href="#为类组件添加-Ref" class="headerlink" title="为类组件添加 Ref"></a>为类组件添加 Ref</h4><p>如果我们想要包装上面的 <code>CustomTextInput</code> ，来模拟挂载之后立即被点击的话，我们可以使用 ref 来访问自定义输入，并手动调用它的 <code>focusTextInput</code> 方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AutoFocusTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.textInput = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.textInput.current.focusTextInput();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;CustomTextInput ref=&#123;<span class="keyword">this</span>.textInput&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>需要注意的是，这种方法仅对 <code>class</code> 声明的 <code>CustomTextInput</code> 有效：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Refs-与函数式组件"><a href="#Refs-与函数式组件" class="headerlink" title="Refs 与函数式组件"></a>Refs 与函数式组件</h4><p><strong>你不能在函数式组件上使用 <code>ref</code> 属性</strong>，因为它们没有实例：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyFunctionalComponent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">input</span> /&gt;</span>;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Parent extends React.Component &#123;</span></span><br><span class="line"><span class="xml">  constructor(props) &#123;</span></span><br><span class="line"><span class="xml">    super(props);</span></span><br><span class="line"><span class="xml">    this.textInput = React.createRef();</span></span><br><span class="line"><span class="xml">  &#125;</span></span><br><span class="line"><span class="xml">  render() &#123;</span></span><br><span class="line"><span class="xml">    // 这将 *不会* 工作！</span></span><br><span class="line"><span class="xml">    return (</span></span><br><span class="line">      &lt;MyFunctionalComponent ref=&#123;this.textInput&#125; /&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>如果你想使用 <code>ref</code>，就像你想使用生命周期方法或者 state 一样，应该将其转换为 <code>class</code> 组件。</p>
-<p>但是，你可以在函数式组件内部使用 <code>ref</code>，只要它指向一个 DOM 元素或者 class 组件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CustomTextInput</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这里必须声明 textInput，这样 ref 回调才可以引用它</span></span><br><span class="line">  <span class="keyword">let</span> textInput = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">handleClick</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    textInput.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=<span class="string">"text"</span></span><br><span class="line">        ref=&#123;(input) =&gt; &#123; textInput = input; &#125;&#125; /&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=<span class="string">"button"</span></span><br><span class="line">        value=<span class="string">"Focus the text input"</span></span><br><span class="line">        onClick=&#123;handleClick&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );  </span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="对父组件暴露-DOM-节点"><a href="#对父组件暴露-DOM-节点" class="headerlink" title="对父组件暴露 DOM 节点"></a>对父组件暴露 DOM 节点</h3><p>在极少数情况下，你可能希望从父组件访问子节点的 DOM 节点。通常不建议这样做，因为它会破坏组件的封装，但偶尔也可用于触发焦点或测量子 DOM 节点的大小或位置。</p>
-<p>虽然你可以<a href="#adding-a-ref-to-a-class-component">向子组件添加 ref</a>，但这不是一个理想的解决方案，因为你只能获取组件实例而不是 DOM 节点。并且，它还在函数式组件上无效。</p>
-<p>如果你使用 React 16.3 或更高, 这种情况下我们推荐使用 <a href="/docs/forwarding-refs.html">ref 转发</a>。 <strong>Ref 转发使组件可以像暴露自己的 ref 一样暴露子组件的 ref</strong>。关于怎样对父组件暴露子组件的 DOM 节点，<a href="/docs/forwarding-refs.html#forwarding-refs-to-dom-components">在 ref 转发文档</a> 中有一个详细的例子。</p>
-<p>如果你使用 React 16.2 或更低，或者你需要比 ref 转发更高的灵活性，你可以使用 <a href="https://gist.github.com/gaearon/1a018a023347fe1c2476073330cc5509" target="_blank" rel="noopener">这个替代方案</a> 将 ref 作为特殊名字的 prop 直接传递。</p>
-<p>可能的话，我们不建议暴露 DOM 节点，但有时候它会成为救命稻草。注意这些方案需要你在子组件中增加一些代码。如果你对子组件的实现没有控制权的话，你剩下的选择是使用 <a href="/docs/react-dom.html#finddomnode"><code>findDOMNode()</code></a>，但是不推荐。</p>
-<h3 id="回调-Refs"><a href="#回调-Refs" class="headerlink" title="回调 Refs"></a>回调 Refs</h3><p>React 也支持另一种设置 ref 的方式，称为“回调 ref”，更加细致地控制何时 ref 被设置和解除。</p>
-<p>不同于传递 <code>createRef()</code> 创建的 <code>ref</code> 属性，你会传递一个函数。这个函数接受 React 组件的实例或 HTML DOM 元素作为参数，以存储它们并使它们能被其他地方访问。</p>
-<p>下面的例子描述了一种通用的范例：使用 <code>ref</code> 回调函数，在实例的属性中存储对 DOM 节点的引用。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomTextInput</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.textInput = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.setTextInputRef = <span class="function"><span class="params">element</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.textInput = element;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.focusTextInput = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// 直接使用原生 API 使 text 输入框获得焦点</span></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.textInput) <span class="keyword">this</span>.textInput.focus();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="comment">// 渲染后文本框自动获得焦点</span></span><br><span class="line">    <span class="keyword">this</span>.focusTextInput();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="comment">// 使用 `ref` 的回调将 text 输入框的 DOM 节点存储到 React</span></span><br><span class="line">    <span class="comment">// 实例上（比如 this.textInput）</span></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"text"</span></span><br><span class="line">          ref=&#123;<span class="keyword">this</span>.setTextInputRef&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">        &lt;input</span><br><span class="line">          type=<span class="string">"button"</span></span><br><span class="line">          value=<span class="string">"Focus the text input"</span></span><br><span class="line">          onClick=&#123;<span class="keyword">this</span>.focusTextInput&#125;</span><br><span class="line">        /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>React 将在组件挂载时将 DOM 元素传入<code>ref</code> 回调函数并调用，当卸载时传入 <code>null</code> 并调用它。<code>ref</code> 回调函数会在 <code>componentDidMount</code> 和 <code>componentDidUpdate</code> 生命周期函数前被调用</p>
-<p>你可以在组件间传递回调形式的 refs，就像你可以传递通过 <code>React.createRef()</code> 创建的对象 refs 一样。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CustomTextInput</span>(<span class="params">props</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input ref=&#123;props.inputRef&#125; /&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Parent extends React.Component &#123;</span></span><br><span class="line"><span class="regexp">  render() &#123;</span></span><br><span class="line"><span class="regexp">    return (</span></span><br><span class="line"><span class="regexp">      &lt;CustomTextInput</span></span><br><span class="line"><span class="regexp">        inputRef=&#123;el =&gt; this.inputElement = el&#125;</span></span><br><span class="line"><span class="regexp">      /</span>&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在上面的例子中，<code>Parent</code> 传递给它的 ref 回调函数作为 <code>inputRef</code> 传递给 <code>CustomTextInput</code>，然后 <code>CustomTextInput</code> 通过 <code>ref</code>属性将其传递给 <code>&lt;input&gt;</code>。最终，<code>Parent</code> 中的 <code>this.inputElement</code> 将被设置为与 <code>CustomTextIput</code> 中的 <code>&lt;input&gt;</code> 元素相对应的 DOM 节点</p>
-<h3 id="旧版-API：String-类型的-Refs"><a href="#旧版-API：String-类型的-Refs" class="headerlink" title="旧版 API：String 类型的 Refs"></a>旧版 API：String 类型的 Refs</h3><p>如果你之前使用过 React ，你可能了解过之前的API中的 string 类型的 ref 属性，比如 “textInput” ，你可以通过 this.refs.textInput 访问DOM节点。我们不建议使用它，因为 String 类型的 refs <a href="https://github.com/facebook/react/pull/8333#issuecomment-271648615" target="_blank" rel="noopener">存在问题</a>。它已过时并<strong>可能会在未来的版本被移除</strong>。如果你目前还在使用 this.refs.textInput 这种方式访问 refs ，我们建议用回调函数的方式代替。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>如果 ref 回调以内联函数的方式定义，在更新期间它会被调用两次，第一次参数是 null ，之后参数是 DOM 元素。这是因为在每次渲染中都会创建一个新的函数实例。因此，React 需要清理旧的 ref 并且设置新的。通过将 ref 的回调函数定义成类的绑定函数的方式可以避免上述问题，但是大多数情况下无关紧要。</p>
-
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/React/">#React</a>
         </div>
+    
+
+    <!-- Comments -->
     
 
 </div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/08/Ajax-axios/">
-                Ajax和axios区别
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-08</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="JQuery-AJAX"><a href="#JQuery-AJAX" class="headerlink" title="JQuery AJAX"></a>JQuery AJAX</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'POST'</span>,</span><br><span class="line">   url: url,</span><br><span class="line">   data: data,</span><br><span class="line">   dataType: dataType,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;,</span><br><span class="line">   error: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-        </div>
-        <a href="/2019/08/08/Ajax-axios/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/02/higher-order-components/">
-                高阶组件
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-02</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>高阶组件（HOC）是react中的高级技术，用来重用组件逻辑。但高阶组件本身并不是React API。它只是一种模式，这种模式是由react自身的组合性质必然产生的。</p>
-<p>具体而言，<strong>高阶组件就是一个函数，且该函数接受一个组件作为参数，并返回一个新的组件。</strong></p>
-        </div>
-        <a href="/2019/08/02/higher-order-components/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/02/web-components/">
-                Web Components
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-02</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>React 和 <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank" rel="noopener">web组件</a> 被用以解决不同问题。Web组件为可重用组件提供了强大的封装能力，而React则是提供了保持DOM和数据同步的声明式库。二者目标互补。作为开发者，你可以随意地在Web组件里使用React，或者在React里使用Web组件，或都有。</p>
-        </div>
-        <a href="/2019/08/02/web-components/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/02/Portals/">
-                Portals
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-02</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReactDOM.createPortal(child, container)</span><br></pre></td></tr></table></figure>
-
-<p>第一个参数（<code>child</code>）是任何<a href="/docs/react-component.html#render">可渲染的 React 子元素</a>，例如一个元素，字符串或碎片。第二个参数（<code>container</code>）则是一个 DOM 元素。</p>
-        </div>
-        <a href="/2019/08/02/Portals/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/02/reconciliation/">
-                协调（Reconciliation）
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-02</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>React提供了一组声明式API以让你不必担心每次更新精确地改变了什么。这使得应用的编写容易了很多，但这是在React中如何实现并不是很明显。这篇文章解释了在React中的“差分(diffing)”算法中我们所做出的选择，以让组件更新是可预测的，并且足够快以适应高性能应用。</p>
-        </div>
-        <a href="/2019/08/02/reconciliation/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/08/01/HexoAndGithub/">
-                Hexo and github.io
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-08-01</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>​        Welcome to <a href="https://songsshao.github.io/">SongShao Notes</a>.Today I will tell you how to use Hexo and github to create your own static blog.</p>
-<p>​        First we need to install several software, <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">npm</a> and <a href="https://github.com/git-for-windows/git/releases/tag/v2.15.0.windows.1" target="_blank" rel="noopener">git</a>, npm is responsible for downloading the local resource files we need, git is responsible for connecting the github project branch to upload and download files.The node.js here already contains npm so there is no need to install it.</p>
-        </div>
-        <a href="/2019/08/01/HexoAndGithub/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/07/31/hello-world/">
-                Hello World
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-07-31</span>
-            
-            
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-        </div>
-        <a href="/2019/07/31/hello-world/" class="read-more">Read More</a>
-    
-
-</div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-
 
 
 </div>
