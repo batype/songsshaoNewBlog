@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://songsshao.github.io">
   <title>React component development | Note&#39;s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。  组件(Component)和模块(Module)又是一对容易混淆的名词，也常常被用来相互替换。个人">
+  <meta name="description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React component development">
 <meta property="og:url" content="https://songsshao.github.io/2020/05/13/ReactComponents/index.html">
 <meta property="og:site_name" content="Note&#39;s">
-<meta property="og:description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。  组件(Component)和模块(Module)又是一对容易混淆的名词，也常常被用来相互替换。个人">
+<meta property="og:description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://songsshao.github.io/images/1590409958782.png">
 <meta property="og:image" content="https://songsshao.github.io/images/1590410014923.png">
 <meta property="og:image" content="https://songsshao.github.io/images/1590410778103.png">
-<meta property="og:updated_time" content="2020-05-25T13:03:07.660Z">
+<meta property="og:updated_time" content="2020-05-25T13:15:16.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React component development">
-<meta name="twitter:description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。  组件(Component)和模块(Module)又是一对容易混淆的名词，也常常被用来相互替换。个人">
+<meta name="twitter:description" content="组件的使用、开发、发布和规范Component，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。Module, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。">
 <meta name="twitter:image" content="https://songsshao.github.io/images/1590409958782.png">
   
     <link rel="alternative" href="/atom.xml" title="Note&#39;s" type="application/atom+xml">
@@ -180,6 +180,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="组件的使用、开发、发布和规范"><a href="#组件的使用、开发、发布和规范" class="headerlink" title="组件的使用、开发、发布和规范"></a>组件的使用、开发、发布和规范</h2><p><strong>Component</strong>，中文称为组件，或者构件。使用非常比较广泛，它的核心意义在于复用，相对模块，对于依赖性有更高的要求。<br><strong>Module</strong>, 中文为模块或模组。它的核心意义是分离职责，属于代码级模块化的产出。它本身是提供服务的功能逻辑，是一组具有一定内聚性代码的组合，职责明确。</p>
+<a id="more"></a>
+
 <blockquote>
 <p>组件(Component)和模块(Module)又是一对容易混淆的名词，也常常被用来相互替换。个人总结，<strong>从设计上来看，组件强调复用，模块强调职责(内聚、分离)，</strong>或者说组件是达到可复用要求的模块。</p>
 </blockquote>
@@ -300,7 +302,7 @@
 <li><p>进入组件文档根目录下</p>
 </li>
 <li><p>切换npm源路径</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">查询配置</span></span><br><span class="line">npm config get registry</span><br><span class="line"></span><br><span class="line">npm config set registry http://registry.npmjs.org</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>查询配置</span><br><span class="line">npm config get registry</span><br><span class="line"></span><br><span class="line">npm config set registry http://registry.npmjs.org</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用npm adduser进行账号登陆</p>
 </li>
@@ -575,6 +577,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">axios</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
@@ -583,19 +597,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">ajax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">axios</a>
               </li>
             
             <div class="clearfix"></div>
