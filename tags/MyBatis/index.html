@@ -6,26 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://songsshao.github.io">
-  <title>Hexo and github.io | Note&#39;s</title>
+  <title>Tag: MyBatis | Note&#39;s</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="​        Welcome to SongShao Notes.Today I will tell you how to use Hexo and github to create your own static blog. ​        First we need to install several software, npm and git, npm is responsible">
-<meta name="keywords" content="Hexo,github">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo and github.io">
-<meta property="og:url" content="https://songsshao.github.io/2019/08/01/HexoAndGithub/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Note&#39;s">
+<meta property="og:url" content="https://songsshao.github.io/tags/MyBatis/index.html">
 <meta property="og:site_name" content="Note&#39;s">
-<meta property="og:description" content="​        Welcome to SongShao Notes.Today I will tell you how to use Hexo and github to create your own static blog. ​        First we need to install several software, npm and git, npm is responsible">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://songsshao.github.io/img/111.png">
-<meta property="og:image" content="https://songsshao.github.io/img/112.png">
-<meta property="og:image" content="https://songsshao.github.io/img/113.png">
-<meta property="og:image" content="https://songsshao.github.io/img/114.png">
-<meta property="og:image" content="https://songsshao.github.io/img/115.png">
-<meta property="og:updated_time" content="2019-08-02T03:03:33.626Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo and github.io">
-<meta name="twitter:description" content="​        Welcome to SongShao Notes.Today I will tell you how to use Hexo and github to create your own static blog. ​        First we need to install several software, npm and git, npm is responsible">
-<meta name="twitter:image" content="https://songsshao.github.io/img/111.png">
+<meta name="twitter:title" content="Note&#39;s">
   
     <link rel="alternative" href="/atom.xml" title="Note&#39;s" type="application/atom+xml">
   
@@ -161,216 +150,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HexoAndGithub" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Hexo and github.io
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/08/24/mybatis Java Api/" class="archive-article-date">
+  	<time datetime="2020-08-24T08:59:27.128Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/08/24/mybatis Java Api/">MyBatis Java API</a>
     </h1>
   
 
-        
-        <a href="/2019/08/01/HexoAndGithub/" class="archive-article-date">
-  	<time datetime="2019-08-01T04:00:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>​        Welcome to <a href="https://songsshao.github.io/">SongShao Notes</a>.Today I will tell you how to use Hexo and github to create your own static blog.</p>
-<p>​        First we need to install several software, <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">npm</a> and <a href="https://github.com/git-for-windows/git/releases/tag/v2.15.0.windows.1" target="_blank" rel="noopener">git</a>, npm is responsible for downloading the local resource files we need, git is responsible for connecting the github project branch to upload and download files.The node.js here already contains npm so there is no need to install it.</p>
-<a id="more"></a>
-<h2 id="Create-Github-Branch-And-Local-Git-Configuration"><a href="#Create-Github-Branch-And-Local-Git-Configuration" class="headerlink" title="Create Github Branch And Local Git Configuration"></a>Create Github Branch And Local Git Configuration</h2><h3 id="Create-A-Github-Repository"><a href="#Create-A-Github-Repository" class="headerlink" title="Create A Github  Repository"></a>Create A Github  Repository</h3><p>​        Here we need to create our static blog repository, naming rules, prefixed with the suggested github name, plus github.io, as shown in my repository name below.</p>
-<p><img src="/img/111.png" alt="111"></p>
-<h3 id="Configuring-SSH-key"><a href="#Configuring-SSH-key" class="headerlink" title="Configuring SSH key"></a>Configuring SSH key</h3><p>​    Why should I configure this? Because you must have your github permission to submit the code, but it is too insecure to use the username and password directly, so we use ssh key to solve the connection problem between the local and the server.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/. ssh  //Check the existing ssh key of this machine</span><br></pre></td></tr></table></figure>
-
-<p>​    If prompted: No such file or directory indicates that you are using git for the first time.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址"</span></span><br></pre></td></tr></table></figure>
-
-<p>​    Then enter 3 times in succession, and finally generate a file in the user directory, open the user directory, find  .ssh\id_rsa.pub   file,Notepad opens and copies the contents, open your github home page, enter personal settings-&gt; SSH and GPG keys -&gt; New SSH key：</p>
-<p><img src="/img/112.png" alt></p>
-<p>​    Fill in the key just copied in the location of the key.</p>
-<h4 id="Test-Connection"><a href="#Test-Connection" class="headerlink" title="Test Connection"></a>Test Connection</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>​    If you prompt Are you sure you want to continue connecting (yes/no)?, type yes and you will see:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi SongsShao! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-
-<p>​    Seeing this message indicates that SSH has been configured successfully!</p>
-<p>​    At this point you also need to configure:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"SongsShao"</span>// Your github username, non-nickname</span><br><span class="line">$ git config --global user.email <span class="string">"xxx@qq.com"</span>//Fill <span class="keyword">in</span> your github registered email address</span><br></pre></td></tr></table></figure>
-
-<h3 id="Write-A-Blog-Using-Hexo"><a href="#Write-A-Blog-Using-Hexo" class="headerlink" title="Write A Blog Using Hexo"></a>Write A Blog Using Hexo</h3><h4 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h4><p>​        It is recommended to use git base to create and use.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
-
-<h4 id="Initialization-project"><a href="#Initialization-project" class="headerlink" title="Initialization project"></a>Initialization project</h4><p>​        Create a new folder named hexo in the computer somewhere (the name can be taken casually), for example, my name is  D:\project\HBuilderProject\BLOG_hexo , because this folder will be used as the place where you store the code in the future, so it is best not to just put.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /f/Workspaces/hexo/</span><br><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-
-<p>​        Hexo will automatically download some files to this directory, including node_modules, the directory structure is as follows:</p>
-<p><img src="/img/113.png" alt></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="comment"># generate</span></span><br><span class="line">$ hexo s <span class="comment"># start service</span></span><br></pre></td></tr></table></figure>
-
-<p>​        After executing the above command, hexo will generate the relevant html files in the public folder. These files will be submitted to github in the future:</p>
-<p><img src="/img/114.png" alt></p>
-<p>​    ‘hexo s’ After starting the service, you can see the content by opening a browser and accessing <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>:</p>
-<p><img src="/img/115.png" alt></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">API</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://songsshao.github.io/2019/08/01/HexoAndGithub/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/08/02/reconciliation/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          协调（Reconciliation）
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/07/31/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -393,9 +234,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
